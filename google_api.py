@@ -1,15 +1,13 @@
 #!/usr/bin/env python3
 """Google API helper — handles token refresh and common API calls.
 
-⚠️ KNOWN LIMITATION: Current OAuth token only has drive.readonly scope.
-   This means:
-   - ✅ Can create docs/sheets
-   - ✅ Can read content
-   - ❌ Cannot share documents (modify permissions)
-   - ❌ Cannot move/organize files
+✅ Current OAuth token has FULL permissions (as of 2026-02-10):
+   - Gmail (read, send, modify)
+   - Calendar (full access)
+   - Drive (full access - create, share, organize)
+   - Docs, Sheets, Slides, Presentations
    
-   To fix: Re-authorize with 'https://www.googleapis.com/auth/drive' scope
-   instead of 'drive.readonly'. See TOOLS.md for details.
+   See TOOLS.md for scope details and re-auth instructions if needed.
 """
 
 import json, urllib.request, urllib.parse, sys, os
